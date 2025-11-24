@@ -1,20 +1,22 @@
 {
   "name": "PWA Geolocalización",
   "short_name": "GeoPWA",
-  "start_url": "/",
+  "start_url": "https://chrisale117.github.io/appGeo/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
   "icons": [
-    {
-      "src": "icon-192.png",
+       {
+      "src": "./192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     },
     {
-      "src": "icon-512.png",
+      "src": "./512.png", 
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable any"
     }
   ]
 }
