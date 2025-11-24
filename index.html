@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PWA Geolocalización</title>
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 1.5rem;
+      max-width: 600px;
+    }
+    button {
+      padding: 0.7rem 1.2rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+    #btn-ubicacion {
+      background: #2563eb;
+      color: white;
+    }
+    #btn-detener {
+      background: #ef4444;
+      color: white;
+    }
+    .card {
+      border-radius: 0.75rem;
+      padding: 1rem;
+      background: #f9fafb;
+      margin-top: 1rem;
+      border: 1px solid #e5e7eb;
+    }
+    .label {
+      font-weight: 600;
+    }
+    code {
+      background: #f3f4f6;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>PWA con Geolocalización</h1>
+  <p>
+    Esta aplicación obtiene tu ubicación usando la
+    <code>Geolocation API</code>. Funciona en navegadores modernos,
+    incluyendo dispositivos Apple (iOS / iPadOS), siempre que se use
+    <strong>HTTPS</strong> o <strong>localhost</strong>.
+  </p>
+
+  <div class="card">
+    <button id="btn-ubicacion">Obtener / Ver ubicación</button>
+    <button id="btn-detener" disabled>Detener seguimiento</button>
+
+    <p><span class="label">Estado de permisos:</span> <span id="permiso">desconocido</span></p>
+
+    <p><span class="label">Latitud:</span> <span id="lat">-</span></p>
+    <p><span class="label">Longitud:</span> <span id="lng">-</span></p>
+    <p><span class="label">Precisión (m):</span> <span id="acc">-</span></p>
+
+    <p><span class="label">Última actualización:</span> <span id="timestamp">-</span></p>
+
+    <p>
+      <a id="link-maps" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">
+        Ver en mapa
+      </a>
+    </p>
+
+    <p id="mensaje" style="color:#6b7280;"></p>
+  </div>
+
+  <div class="card">
+    <h2>Notas para iOS (iPhone / iPad)</h2>
+    <ul>
+      <li>Asegúrate de usar <strong>HTTPS</strong> al probar en un dispositivo físico.</li>
+      <li>En iOS, la app solo puede obtener ubicación cuando está en uso.</li>
+      <li>Si no ves el cuadro de permiso, revisa:
+        Ajustes → Privacidad y seguridad → Localización → Safari / app instalada.
+      </li>
+      <li>Siempre inicia la geolocalización con un clic (no al cargar la página).</li>
+    </ul>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
